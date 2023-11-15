@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Gora Picker",
+  "short_name": "Gora Picker",
+  "version": "io.cordova.hellocordova",
+  "description": "Sample Apache Cordova App",
+  "author": "I was here!",
+  "icons": [],
+  "start_url": "index.html"
+}
