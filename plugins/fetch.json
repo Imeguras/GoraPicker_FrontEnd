@@ -9,14 +9,6 @@
       "ANDROIDX_CORE_VERSION": "1.6.+"
     }
   },
-  "cordova-plugin-barcodescanner": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-barcodescanner"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-compat": {
     "source": {
       "type": "registry",
