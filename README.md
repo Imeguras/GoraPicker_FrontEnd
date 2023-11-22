@@ -58,6 +58,9 @@ And everything should be fine
 
 ## Plugins
 
+You can check out some oficial plugins [here](https://cordova.apache.org/plugins/).
+
 Camera - https://github.com/apache/cordova-plugin-camera
-QR Scanner - https://www.npmjs.com/package/cordova-plugin-qrscanner
+QR Scanner [Unoficial] - https://www.npmjs.com/package/cordova-plugin-qrscanner
 File Abstraction Library - https://github.com/apache/cordova-plugin-file
+Status Bar -https://github.com/apache/cordova-plugin-statusbar
