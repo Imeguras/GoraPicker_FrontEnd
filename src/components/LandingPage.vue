@@ -1,35 +1,63 @@
-<template lang='pug'>
-  .hello
-    <h1>{{ msg }}</h1>
-    
+<template>
+<div>
+  <div v-on:click="transitInventory($event)">
+    <Card style="width: 25em">
+        <template #title>Inventory</template>
+        <template #content>
+            
+
+        </template>
+    </Card>
   </div>
+  <div v-on:click="transitInventory($event)">
+    <Card  style="width: 25em">
+        <template #title>Database</template>
+        <template #content>
+        
+
+        </template>
+    </Card>
+  </div>
+  <div v-on:click="transitCamera()">
+    <Card  style="width: 25em">
+        <template #title>Camera</template>
+        <template #content>
+        
+
+        </template>
+    </Card>
+  </div>
+</div>
 </template>
 
 <script>
+import Card from "primevue/card"
+//vue router
 export default {
+
   name: 'LandingPage',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  components: {
+    Card
+  },
+  //function to transition to Inventory Component
+  //function to transition to Database
+  methods:{
+    transitInventory: function (event){
+      console.log(event.currentTarget.id); 
+    }, 
+    transitCamera: function(){
+      //goto /Camera vue router
+      this.$router.push({ name: 'Camera' })
     }
-  }
+  },
+  data() {
+    return {
+      
+    }
+  },
+  
+
+
+
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
