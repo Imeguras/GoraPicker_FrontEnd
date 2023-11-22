@@ -28,7 +28,7 @@ export default {
   },
   mounted(){
     //this.scanQRCode(); 
-    
+    this.snapshot();
 
 
   },
