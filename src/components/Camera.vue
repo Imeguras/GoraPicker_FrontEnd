@@ -1,32 +1,8 @@
 <template lang="pug">
-img
+img(v-bind:src="image")
 </template>
 <script>
-document.addEventListener("deviceready", onDeviceReady, false);
-var cameraOptions = {
-        // Some common settings are 20, 50, and 100
-        quality: 50,
-        destinationType: Camera.DestinationType.FILE_URI,
-        // In this app, dynamically set the picture source, Camera or photo gallery
-        sourceType: srcType,
-        encodingType: Camera.EncodingType.JPEG,
-        mediaType: Camera.MediaType.PICTURE,
-        allowEdit: true,
-        correctOrientation: true
-    }
 
-function cameraSuccess(imageData){
-   var image = document.getElementById('label');
-   image.src = "data:image/jpeg;base64," + imageData;
-
-}
-function cameraError(string){
-  console.log(string); 
-}
-function onDeviceReady() {
-    console.log(navigator.camera);
-    navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);
-}
 
 
         /* 
@@ -52,10 +28,24 @@ export default {
   },
   mounted(){
     //this.scanQRCode(); 
+    
+
+
   },
   //function to transition to Inventory Component
   //function to transition to Database
   methods:{
+    cameraSuccess(imageData){
+      this.image = "data:image/jpeg;base64," + imageData;
+
+    },
+    cameraError(string){
+      console.log(string); 
+    },
+    snapshot() {
+      navigator.camera.getPicture(this.cameraSuccess, this.cameraError, this.cameraOptions);
+    }
+
   /*scanQRCode() {
       // Check if Cordova is available
       
@@ -75,7 +65,18 @@ export default {
   },
   data() {
     return {
-      text: "nothing",
+      cameraOptions : {
+          // Some common settings are 20, 50, and 100
+          quality: 50,
+          destinationType: Camera.DestinationType.FILE_URI,
+          // In this app, dynamically set the picture source, Camera or photo gallery
+          sourceType: srcType,
+          encodingType: Camera.EncodingType.JPEG,
+          mediaType: Camera.MediaType.PICTURE,
+          allowEdit: true,
+          correctOrientation: true
+      },
+      image: ""
     }
   },
   

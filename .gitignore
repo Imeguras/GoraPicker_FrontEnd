@@ -13,3 +13,4 @@ platforms
 *.njsproj
 *.sln
 plugins/**/
+www/
