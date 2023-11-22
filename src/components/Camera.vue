@@ -3,7 +3,7 @@ img
 </template>
 <script>
 document.addEventListener("deviceready", onDeviceReady, false);
-var options = {
+var cameraOptions = {
         // Some common settings are 20, 50, and 100
         quality: 50,
         destinationType: Camera.DestinationType.FILE_URI,
